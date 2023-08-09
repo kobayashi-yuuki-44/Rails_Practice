@@ -30,7 +30,7 @@
             <div class="dropdown-item"><%# "#{current_user.last_name} #{current_user.first_name}" %></div>
             <div class="dropdown-divider"></div>
             <%= link_to 'Profile', '#', class: 'dropdown-item' %>
-            <%= link_to 'Logout', '#', class: 'dropdown-item' %>
+            <%= link_to 'Logout', login_path, class: 'dropdown-item' %>
           </div>
         </li>
       </ul>

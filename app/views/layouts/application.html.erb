@@ -8,12 +8,27 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  
   <body>
-    <%= render 'shared/header' %>
-    <%# render 'shared/before_login_header' %>
+    <% if logged_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
     <%= render 'shared/flash_message' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
+
+  <% if flash[:success] %>
+  <div class="flash-success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<% if flash[:error] %>
+  <div class="flash-error">
+    <%= flash[:error] %>
+  </div>
+<% end %>
 </html>
