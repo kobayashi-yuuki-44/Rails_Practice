@@ -25,11 +25,9 @@ class PostsController < ApplicationController
     end
   end
 
-
   # POST /posts
   def create
     @post = Post.new(post_params)
-
     if @post.save
       flash[:success] = "Post was successfully created."
       redirect_to @post
@@ -68,10 +66,9 @@ class PostsController < ApplicationController
   end
 
   def ensure_correct_user
-    @post = Post.find(params[:id])
-    if @post.user != current_user
-      flash[:alert] = "他人の投稿は編集できません。"
-      redirect_to posts_path
-    end
+    @post = Post.find_by(id: params[:id])
+    return if @post.user == current_user
+
+    redirect_to("/posts/index")
   end
 end

@@ -20,11 +20,11 @@ class UserSessionsController < ApplicationController
   def user_show
     @user = @post.user
     @posts = @user.posts
- end
+  end
 
- private
+  private
 
   def set_post
-  @post = Post.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 end
