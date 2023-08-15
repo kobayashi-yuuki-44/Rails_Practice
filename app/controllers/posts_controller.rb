@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :ensure_correct_user, only: [:edit]
 
   # GET /posts
   def index
@@ -15,7 +16,15 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit; end
+  def edit
+    @post = Post.find(params[:id])
+    if @post.user == current_user
+      render "edit"
+    else
+      redirect_to posts_path
+    end
+  end
+
 
   # POST /posts
   def create
@@ -56,5 +65,13 @@ class PostsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+
+  def ensure_correct_user
+    @post = Post.find(params[:id])
+    if @post.user != current_user
+      flash[:alert] = "他人の投稿は編集できません。"
+      redirect_to posts_path
+    end
   end
 end

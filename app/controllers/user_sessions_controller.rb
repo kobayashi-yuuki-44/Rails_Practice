@@ -16,4 +16,15 @@ class UserSessionsController < ApplicationController
     logout
     redirect_back_or_to login_path, notice: "Logout successful."
   end
+
+  def user_show
+    @user = @post.user
+    @posts = @user.posts
+ end
+
+ private
+
+  def set_post
+  @post = Post.find_by(id: params[:id])
+  end
 end
