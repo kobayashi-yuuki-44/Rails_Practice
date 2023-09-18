@@ -1,6 +1,9 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
 
+  <%= link_to root_path, class: 'navbar-brand' do %>
+    <%= image_tag("logo.png") %>
+  <% end %>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,7 +12,7 @@
       <ul class="navbar-nav ml-auto main-nav align-items-center">
         <li class="nav-item dropdown dropdown-slide">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Post
+            掲示板
           </a>
 
           <div class="dropdown-menu dropdown-menu-right">
@@ -18,27 +21,24 @@
           </div>
         </li>
 
-        <li class="nav-item">
-          <%= link_to 'List of Likes', '#', class: 'nav-link' %>
-        </li>
+        <li class="nav-item dropdown dropdown-slide">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        フォロー
+      </a>
 
         <li class="nav-item dropdown dropdown-slide">
           <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="header-profile">
             <%= image_tag 'sample', size: '40x40', class: 'rounded-circle mr15'%>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-          <% if current_user %>
-            <div class="dropdown-item"><%= "#{current_user.last_name} #{current_user.first_name}" %></div>
-          <% end %>
-            <div class="dropdown-divider"></div>
-            <%= link_to 'Profile', '#', class: 'dropdown-item' %>
-            <%= link_to 'Logout', login_path, class: 'dropdown-item' %>
-            <%= link_to 'first_name', '#', class: 'dropdown-item' %>
-            <%= link_to 'last_name', '#', class: 'dropdown-item' %>
-          </div>
-        </li>
-      </ul>
+          <div class="dropdown-item"><%= current_user.decorate.full_name %></div>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
+
+          <%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'dropdown-item' %>
+        </div>
+      </li>
+    </ul>
     </div>
   </nav>
 </header>
-

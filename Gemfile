@@ -35,7 +35,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap', '~> 4.5.0'
-gem 'font-awesome-sass', '~> 5.11.2'
+gem 'draper'
+gem 'font-awesome-sass', '~> 5.15.1'
 gem 'sassc', '2.1.0'
 gem 'jquery-rails'
 gem 'sorcery', '0.15.0'
@@ -51,6 +52,7 @@ group :development, :test do
   # gem 'binding_of_caller'
   gem 'faker'
   gem 'factory_bot_rails'
+  gem 'rails-i18n'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'rubocop-checkstyle_formatter'
@@ -74,3 +76,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+

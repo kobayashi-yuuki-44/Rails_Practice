@@ -1,30 +1,20 @@
 class UserSessionsController < ApplicationController
+  skip_before_action :require_login, only: %i[new create]
+
   def new; end
 
   def create
     @user = login(params[:email], params[:password])
     if @user
-      flash[:success] = "Login successful."
-      redirect_back_or_to posts_path
+      redirect_back_or_to posts_path, success: t('.success')
     else
-      flash.now[:danger] = "Login failed."
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_back_or_to login_path, notice: "Logout successful."
-  end
-
-  def user_show
-    @user = @post.user
-    @posts = @user.posts
-  end
-
-  private
-
-  def set_post
-    @post = Post.find_by(id: params[:id])
+    redirect_to root_path, success: t('.success')
   end
 end
