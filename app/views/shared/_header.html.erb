@@ -12,12 +12,12 @@
       <ul class="navbar-nav ml-auto main-nav align-items-center">
         <li class="nav-item dropdown dropdown-slide">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            掲示板
+            <%= Board.model_name.human %>
           </a>
 
           <div class="dropdown-menu dropdown-menu-right">
-            <%= link_to 'List of Posts', posts_path, class: 'dropdown-item' %>
-            <%= link_to 'New Post', new_post_path, class: 'dropdown-item' %>
+            <%= link_to t('boards.index.title'), boards_path, class: 'dropdown-item' %>
+            <%= link_to t('boards.new.title'), new_board_path, class: 'dropdown-item' %>
           </div>
         </li>
 
@@ -36,6 +36,7 @@
           <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
 
           <%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'dropdown-item' %>
+          
         </div>
       </li>
     </ul>

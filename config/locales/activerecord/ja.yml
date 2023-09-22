@@ -10,3 +10,6 @@ ja:
         password_confirmation: 'パスワード確認'
         last_name: '姓'
         first_name: '名'
+      board:
+        title: 'タイトル'
+        body: '本文'
