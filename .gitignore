@@ -33,4 +33,6 @@
 # Ignore vendor
 /vendor
 /vender
+/config/database.yml
+/public/uploads
 
