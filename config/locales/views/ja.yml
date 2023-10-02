@@ -3,10 +3,15 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    post: '投稿'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
@@ -30,8 +35,13 @@ ja:
       no_result: '掲示板がありません。'
     new:
       title: '掲示板作成'
+    show:
+      title: '掲示板詳細'
     bookmarks:
       title: 'ブックマーク一覧'
+      boards:
+    edit:
+      title: '掲示板編集'
   profiles:
     show:
       title: 'プロフィール'
