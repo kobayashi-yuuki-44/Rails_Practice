@@ -26,4 +26,9 @@ class BoardsController < ApplicationController
   def board_params
     params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
   end
+
+  def bookmarks
+    @bookmark_boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc)
+  end
+
 end
