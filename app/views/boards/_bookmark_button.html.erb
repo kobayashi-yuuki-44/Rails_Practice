@@ -1,0 +1,5 @@
+<% if current_user.bookmark?(board) %>
+  <%= render 'unbookmark', { board: board } %>
+<% else %>
+  <%= render 'bookmark', { board: board } %>
+<% end %>

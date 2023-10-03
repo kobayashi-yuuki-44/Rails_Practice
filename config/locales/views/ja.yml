@@ -35,3 +35,14 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+      bookmarks:
+      title: 'ブックマーク一覧'
+      no_result: 'ブックマーク中の掲示板がありません。'
+  bookmarks:
+    create:
+      success: 'ブックマークしました'
+    destroy:
+      success: 'ブックマークを外しました'
+  profiles:
+    show:
+      title: 'プロフィール'      

@@ -2,6 +2,9 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
 
   has_many :boards, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_boards, through: :bookmarks, source: :board
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -17,4 +20,17 @@ class User < ApplicationRecord
     # @user.mine?(object)のように利用すると、object.user_id と @user.id を比較する。
     object.user_id == id
   end
+
+  def bookmark(board)
+    bookmark_boards << board
+  end
+
+  def unbookmark(board)
+    bookmark_boards.destroy(board)
+  end
+
+  def bookmark?(board)
+    bookmark_boards.include?(board)
+  end
+
 end
