@@ -1,3 +1,7 @@
-<%= link_to bookmarks_path(board_id: board.id), id: "js-bookmark-button-for-board-#{board.id}", class:"float-right", method: :post do %>
+<%= link_to bookmarks_path(board_id: board.id),
+             id: "js-bookmark-button-for-board-#{board.id}",
+             class:"float-right",
+             method: :post,
+             remote: true do %>
   <%= icon 'far', 'star' %>
 <% end %>
