@@ -1,0 +1,9 @@
+<li class="list-inline-item">
+  <%= link_to comment_path(comment),
+              class: 'js-delete-comment-button',
+              method: :delete,
+              data: { confirm: t('defaults.message.delete_confirm') },
+              remote: true do %>
+    <%= icon 'fa', 'trash' %>
+  <% end %>
+</li>

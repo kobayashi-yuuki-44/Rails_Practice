@@ -1,0 +1,5 @@
+<%= form_with model: comment, url: [board, comment], id: 'new_comment' do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control mb-3', rows: 4, placeholder: Comment.human_attribute_name(:body), id: 'js-new-comment-body' %>
+      <%= f.submit t('defaults.post'), class: 'btn btn-primary' %>
+  <% end %>
