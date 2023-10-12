@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <!-- 検索フォーム -->
+      <%= render 'search_form', url: bookmarks_boards_path %>
       <form>
         <div class="input-group mb-3">
           <input class="form-control" placeholder="検索ワード" type="search" />
@@ -24,6 +25,7 @@
           <p><%= t('.no_result') %></p>
         <% end %>
       </div>
+      <%= paginate @bookmark_boards %>
     </div>
   </div>
 </div>

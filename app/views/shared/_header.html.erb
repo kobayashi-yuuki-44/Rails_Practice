@@ -14,7 +14,7 @@
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= Board.model_name.human %>
           </a>
-
+          <%= image_tag current_user.avatar_url, size: '40x40', class: 'rounded-circle mr15'%>
           <div class="dropdown-menu dropdown-menu-right">
             <%= link_to t('boards.index.title'), boards_path, class: 'dropdown-item' %>
             <%= link_to t('boards.new.title'), new_board_path, class: 'dropdown-item' %>
@@ -33,7 +33,7 @@
           <div class="dropdown-item"><%= current_user.decorate.full_name %></div>
           <div class="dropdown-divider"></div>
           <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
-
+          <%= link_to (t 'profiles.show.title'), profile_path, class: 'dropdown-item' %>
           <%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'dropdown-item' %>
           
         </div>

@@ -3,6 +3,9 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    post: '投稿'
+    search_word: '検索ワード'
+    edit: '編集'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -45,4 +48,6 @@ ja:
       success: 'ブックマークを外しました'
   profiles:
     show:
-      title: 'プロフィール'      
+      title: 'プロフィール'
+    edit:
+    title: 'プロフィール編集'      
