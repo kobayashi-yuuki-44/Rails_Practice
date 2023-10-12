@@ -5,5 +5,6 @@
               data: { confirm: t('defaults.message.delete_confirm') },
               remote: true do %>
     <%= icon 'fa', 'trash' %>
+    <%= image_tag comment.user.avatar_url, class: 'rounded-circle', size: '50x50' %>
   <% end %>
 </li>
