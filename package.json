@@ -1,5 +1,7 @@
 {
   "name": "post_app_sorcery",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "admin-lte": "^3.1"
+  }
 }

@@ -10,6 +10,7 @@ ja:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+  not_authorized: '権限がありません'  
   users:
     new:
       title: 'ユーザー登録'
@@ -51,3 +52,15 @@ ja:
       title: 'プロフィール'
     edit:
     title: 'プロフィール編集'      
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
