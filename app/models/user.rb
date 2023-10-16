@@ -16,6 +16,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
 
+  enum role: { general: 0, admin: 1 }
+  
+
   def mine?(object)
     # 呼び出し元のオブジェクトのIDを示す self.id を省略した記法。
     # @user.mine?(object)のように利用すると、object.user_id と @user.id を比較する。
