@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= board.id %>
+  </td>
+  <td>
+    <%= link_to board.title, admin_board_path(board) %>
+  </td>
+  <td>
+    <%= board.user.decorate.full_name %>
+  </td>
+  <td>
+    <%= l board.created_at, format: :long %>
+  </td>
+  <td>
+    <%= link_to t('defaults.show'), admin_board_path(board), class: 'btn btn-info' %>
+    <%= link_to t('defaults.edit'), edit_admin_board_path(board), class: 'btn btn-success' %>
+    <%= link_to t('defaults.delete'), admin_board_path(board), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'btn btn-danger' %>
+  </td>
+</tr>

@@ -43,6 +43,7 @@ gem 'sorcery', '0.15.0'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack'
+gem 'enum_help'
 
 
 group :development, :test do
