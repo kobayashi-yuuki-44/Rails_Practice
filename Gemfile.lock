@@ -100,6 +100,8 @@ GEM
       activesupport (>= 5.0)
       request_store (>= 1.0)
       ruby2_keywords
+    enum_help (0.0.19)
+      activesupport (>= 3.0.0)
     erubi (1.10.0)
     execjs (2.7.0)
     factory_bot (6.1.0)
@@ -353,6 +355,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   draper
+  enum_help
   factory_bot_rails
   faker
   font-awesome-sass (~> 5.15.1)

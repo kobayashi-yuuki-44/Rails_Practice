@@ -22,18 +22,18 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-          <%= link_to '#', class: "nav-link" do %>
+          <%= link_to admin_boards_path, class: "nav-link #{active_if('admin/boards')}" do %>
             <i class="nav-icon far fa-file"></i>
             <p>
-              掲示板
+              <%= t('admin.boards.index.title') %>
             </p>
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to '#', class: "nav-link" do %>
+          <%= link_to admin_users_path, class: "nav-link #{active_if('admin/users')}" do %>
             <i class="nav-icon far fa-user"></i>
             <p>
-              ユーザー
+              <%= t('admin.users.index.title') %>
             </p>
           <% end %>
         </li>
